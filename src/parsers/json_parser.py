@@ -3,7 +3,7 @@ from datetime import datetime
 from typing import Dict, List, Optional
 from sqlalchemy.orm import Session
 from sqlalchemy import and_
-from football_stats.database.models import Base, Team, Player, Match, Goal, Card, Substitution, Referee, MatchReferee
+from src.database.models import Base, Team, Player, Match, Goal, Card, Substitution, Referee, MatchReferee
 
 
 class MatchParser:

@@ -1,13 +1,13 @@
 import os
 from pathlib import Path
-from football_stats.database.database import init_db, SessionLocal
-from football_stats.database.models import Team, Player, Match, Goal, Card, Substitution
-from football_stats.parsers.json_parser import MatchParser
+from src.database.database import init_db, SessionLocal
+from src.database.models import Team, Player, Match, Goal, Card, Substitution
+from src.parsers.json_parser import MatchParser
 
 
 def test_parser():
     # Get the project root directory and data directory
-    root_dir = Path(__file__).parent
+    root_dir = Path(__file__).parent.parent
     data_dir = root_dir / 'data'
 
     # Initialize database
