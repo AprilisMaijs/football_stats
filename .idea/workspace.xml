@@ -4,34 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3d11e96-d151-4078-9821-fc93859b4775" name="Changes" comment="JSON parser, DB model">
-      <change afterPath="$PROJECT_DIR$/src/data/futbols1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/futbols2 (1).json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/futbols2 (2).json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/futbols2 (3).json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/futbols2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/statistics/scorers_calculator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/statistics/show_stats.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/statistics/standings_calculator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/directory_setup.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/football_stats/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/football_stats/config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/football_stats/data/futbols0.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/futbols0.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/football_stats/database/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/football_stats/database/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/football_stats/database/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/football_stats/football_stats.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/football_stats.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/football_stats/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/football_stats/parsers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/initialize.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/football_stats/parsers/json_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsers/json_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/football_stats/statistics/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/football_stats/statistics/calculator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/football_stats/test_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/data_input_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/football_stats/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/statistics/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/football_stats/utils/helpers.py" beforeDir="false" />
-    </list>
+    <list default="true" id="a3d11e96-d151-4078-9821-fc93859b4775" name="Changes" comment="basic interface flask app" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,6 +14,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -83,6 +57,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.app.executor": "Run",
     "Python.data_input_test.executor": "Run",
     "Python.database.executor": "Run",
     "Python.directory_setup.executor": "Run",
@@ -169,7 +145,7 @@
       <updated>1736180902436</updated>
       <workItem from="1736180912195" duration="1922000" />
       <workItem from="1736199121387" duration="2986000" />
-      <workItem from="1736274335628" duration="3543000" />
+      <workItem from="1736274335628" duration="3862000" />
     </task>
     <task id="LOCAL-00001" summary="JSON parser, DB model">
       <option name="closed" value="true" />
@@ -187,7 +163,23 @@
       <option name="project" value="LOCAL" />
       <updated>1736201861582</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="statistics calculators, multiple file handling">
+      <option name="closed" value="true" />
+      <created>1736278008988</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1736278008988</updated>
+    </task>
+    <task id="LOCAL-00004" summary="basic interface flask app">
+      <option name="closed" value="true" />
+      <created>1736278237561</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1736278237561</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,12 +187,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="JSON parser, DB model" />
-    <option name="LAST_COMMIT_MESSAGE" value="JSON parser, DB model" />
+    <MESSAGE value="statistics calculators, multiple file handling" />
+    <MESSAGE value="basic interface flask app" />
+    <option name="LAST_COMMIT_MESSAGE" value="basic interface flask app" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/football_league$show_stats.coverage" NAME="show_stats Coverage Results" MODIFIED="1736277360411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/statistics" />
     <SUITE FILE_PATH="coverage/football_league$directory_setup.coverage" NAME="directory_setup Coverage Results" MODIFIED="1736200129671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/football_league$database.coverage" NAME="database Coverage Results" MODIFIED="1736276869845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/database" />
+    <SUITE FILE_PATH="coverage/football_league$app.coverage" NAME="app Coverage Results" MODIFIED="1736278154258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/interface" />
     <SUITE FILE_PATH="coverage/football_league$json_parser.coverage" NAME="json_parser Coverage Results" MODIFIED="1736275849852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/parsers" />
     <SUITE FILE_PATH="coverage/football_league$standings_calculator.coverage" NAME="standings_calculator Coverage Results" MODIFIED="1736276400944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/statistics" />
     <SUITE FILE_PATH="coverage/football_league$data_input_test.coverage" NAME="data_input_test Coverage Results" MODIFIED="1736277755209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/tests" />
