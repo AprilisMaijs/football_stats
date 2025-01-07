@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Football League Statistics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f8f8f8;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Football League Statistics</h1>
+
+        <div class="section">
+            <h2>Tournament Standings</h2>
+            <table>
+                <tr>
+                    <th>Position</th>
+                    <th>Team</th>
+                    <th>Points</th>
+                    <th>W</th>
+                    <th>WO</th>
+                    <th>LO</th>
+                    <th>L</th>
+                    <th>GF</th>
+                    <th>GA</th>
+                    <th>GD</th>
+                </tr>
+                {% for team in data.standings %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ team.team_name }}</td>
+                    <td>{{ team.points }}</td>
+                    <td>{{ team.wins_regular }}</td>
+                    <td>{{ team.wins_overtime }}</td>
+                    <td>{{ team.losses_overtime }}</td>
+                    <td>{{ team.losses_regular }}</td>
+                    <td>{{ team.goals_for }}</td>
+                    <td>{{ team.goals_against }}</td>
+                    <td>{{ team.goal_difference }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Top Scorers</h2>
+            <table>
+                <tr>
+                    <th>Position</th>
+                    <th>Player</th>
+                    <th>Team</th>
+                    <th>Goals</th>
+                    <th>Assists</th>
+                </tr>
+                {% for scorer in data.scorers %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ scorer.player_name }}</td>
+                    <td>{{ scorer.team_name }}</td>
+                    <td>{{ scorer.goals }}</td>
+                    <td>{{ scorer.assists }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Referee Statistics</h2>
+            <table>
+                <tr>
+                    <th>Position</th>
+                    <th>Referee</th>
+                    <th>Matches</th>
+                    <th>Cards</th>
+                    <th>Avg/Match</th>
+                </tr>
+                {% for ref in data.referees %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ ref.referee_name }}</td>
+                    <td>{{ ref.matches }}</td>
+                    <td>{{ ref.total_cards }}</td>
+                    <td>{{ "%.2f"|format(ref.avg_cards_per_match) }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Top Goalkeepers</h2>
+            <table>
+                <tr>
+                    <th>Position</th>
+                    <th>Goalkeeper</th>
+                    <th>Team</th>
+                    <th>Matches</th>
+                    <th>Goals Conceded</th>
+                    <th>Avg/Match</th>
+                </tr>
+                {% for keeper in data.keepers %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ keeper.keeper_name }}</td>
+                    <td>{{ keeper.team_name }}</td>
+                    <td>{{ keeper.matches_played }}</td>
+                    <td>{{ keeper.goals_conceded }}</td>
+                    <td>{{ "%.1f"|format(keeper.avg_goals_conceded) }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>
