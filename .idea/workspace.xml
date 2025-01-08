@@ -4,18 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3d11e96-d151-4078-9821-fc93859b4775" name="Changes" comment="basic interface flask app">
-      <change afterPath="$PROJECT_DIR$/README" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/statistics/popular_goals_calculator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/statistics/substitutions_calculator.py" afterDir="false" />
+    <list default="true" id="a3d11e96-d151-4078-9821-fc93859b4775" name="Changes" comment="interface improvements, db flush, new calculators">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/futbols0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/futbols1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/futbols2 (1).json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/futbols2 (2).json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/futbols2 (3).json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/futbols2.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/football_stats.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/football_stats.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/initialize.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/initialize.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/statistics/show_stats.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/statistics/show_stats.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +161,7 @@
       <workItem from="1736180912195" duration="1922000" />
       <workItem from="1736199121387" duration="2986000" />
       <workItem from="1736274335628" duration="4297000" />
-      <workItem from="1736353210232" duration="7744000" />
+      <workItem from="1736353210232" duration="9762000" />
     </task>
     <task id="LOCAL-00001" summary="JSON parser, DB model">
       <option name="closed" value="true" />
@@ -196,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736278237561</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="interface improvements, db flush, new calculators">
+      <option name="closed" value="true" />
+      <created>1736361037499</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1736361037499</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,11 +213,12 @@
     <MESSAGE value="JSON parser, DB model" />
     <MESSAGE value="statistics calculators, multiple file handling" />
     <MESSAGE value="basic interface flask app" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic interface flask app" />
+    <MESSAGE value="interface improvements, db flush, new calculators" />
+    <option name="LAST_COMMIT_MESSAGE" value="interface improvements, db flush, new calculators" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/football_league$show_stats.coverage" NAME="show_stats Coverage Results" MODIFIED="1736355918161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/statistics" />
-    <SUITE FILE_PATH="coverage/football_league$main.coverage" NAME="main Coverage Results" MODIFIED="1736359721769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/football_league$main.coverage" NAME="main Coverage Results" MODIFIED="1736362700869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/football_league$directory_setup.coverage" NAME="directory_setup Coverage Results" MODIFIED="1736200129671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/football_league$database.coverage" NAME="database Coverage Results" MODIFIED="1736354028780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/football_league$app.coverage" NAME="app Coverage Results" MODIFIED="1736357074652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/interface" />
