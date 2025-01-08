@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float, ForeignKey, DateTime, Boolean, Table
+from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Boolean
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
@@ -58,6 +58,7 @@ class MatchReferee(Base):
     referee = relationship("Referee", back_populates="match_referees")
 
 
+# noinspection PyTypeChecker
 class Match(Base):
     __tablename__ = 'matches'
 
@@ -92,6 +93,7 @@ class Goal(Base):
     # Relationships
     match = relationship("Match", back_populates="goals")
     team = relationship("Team", back_populates="goals")
+    # noinspection PyTypeChecker
     scorer = relationship("Player", foreign_keys=[scorer_id], back_populates="goals_scored")
     assist1 = relationship("Player", foreign_keys=[assist1_id], back_populates="first_assists")
     assist2 = relationship("Player", foreign_keys=[assist2_id], back_populates="second_assists")

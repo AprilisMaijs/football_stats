@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3d11e96-d151-4078-9821-fc93859b4775" name="Changes" comment="basic interface flask app" />
+    <list default="true" id="a3d11e96-d151-4078-9821-fc93859b4775" name="Changes" comment="basic interface flask app">
+      <change afterPath="$PROJECT_DIR$/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/statistics/popular_goals_calculator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/statistics/substitutions_calculator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/football_stats.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/football_stats.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/initialize.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/initialize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/statistics/show_stats.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/statistics/show_stats.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -58,12 +70,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.index.html.executor": "Run",
     "Python.app.executor": "Run",
     "Python.data_input_test.executor": "Run",
     "Python.database.executor": "Run",
     "Python.directory_setup.executor": "Run",
     "Python.initialize.executor": "Run",
     "Python.json_parser.executor": "Run",
+    "Python.main.executor": "Run",
     "Python.models.executor": "Run",
     "Python.show_stats.executor": "Run",
     "Python.standings_calculator.executor": "Run",
@@ -76,7 +90,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog",
+    "settings.editor.selected.configurable": "com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -91,11 +105,13 @@
       <recent name="C:\Users\marts\PycharmProjects\pythonProject\football_stats\data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\marts\PycharmProjects\pythonProject\src\interface\templates" />
+      <recent name="C:\Users\marts\PycharmProjects\pythonProject\src\interface" />
       <recent name="C:\Users\marts\PycharmProjects\pythonProject\src\tests" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="database" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="data_input_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="football_league" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -104,12 +120,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/database.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/tests/data_input_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -120,7 +136,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.database" />
+        <item itemvalue="Python.data_input_test" />
       </list>
     </recent_temporary>
   </component>
@@ -145,7 +161,8 @@
       <updated>1736180902436</updated>
       <workItem from="1736180912195" duration="1922000" />
       <workItem from="1736199121387" duration="2986000" />
-      <workItem from="1736274335628" duration="3862000" />
+      <workItem from="1736274335628" duration="4297000" />
+      <workItem from="1736353210232" duration="7744000" />
     </task>
     <task id="LOCAL-00001" summary="JSON parser, DB model">
       <option name="closed" value="true" />
@@ -192,15 +209,16 @@
     <option name="LAST_COMMIT_MESSAGE" value="basic interface flask app" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/football_league$show_stats.coverage" NAME="show_stats Coverage Results" MODIFIED="1736277360411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/statistics" />
+    <SUITE FILE_PATH="coverage/football_league$show_stats.coverage" NAME="show_stats Coverage Results" MODIFIED="1736355918161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/statistics" />
+    <SUITE FILE_PATH="coverage/football_league$main.coverage" NAME="main Coverage Results" MODIFIED="1736359721769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/football_league$directory_setup.coverage" NAME="directory_setup Coverage Results" MODIFIED="1736200129671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/football_league$database.coverage" NAME="database Coverage Results" MODIFIED="1736276869845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/database" />
-    <SUITE FILE_PATH="coverage/football_league$app.coverage" NAME="app Coverage Results" MODIFIED="1736278154258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/interface" />
+    <SUITE FILE_PATH="coverage/football_league$database.coverage" NAME="database Coverage Results" MODIFIED="1736354028780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/football_league$app.coverage" NAME="app Coverage Results" MODIFIED="1736357074652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/interface" />
     <SUITE FILE_PATH="coverage/football_league$json_parser.coverage" NAME="json_parser Coverage Results" MODIFIED="1736275849852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/parsers" />
     <SUITE FILE_PATH="coverage/football_league$standings_calculator.coverage" NAME="standings_calculator Coverage Results" MODIFIED="1736276400944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/statistics" />
-    <SUITE FILE_PATH="coverage/football_league$data_input_test.coverage" NAME="data_input_test Coverage Results" MODIFIED="1736277755209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/tests" />
+    <SUITE FILE_PATH="coverage/football_league$data_input_test.coverage" NAME="data_input_test Coverage Results" MODIFIED="1736354790156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/tests" />
     <SUITE FILE_PATH="coverage/football_league$models.coverage" NAME="models Coverage Results" MODIFIED="1736201154843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/football_stats/database" />
-    <SUITE FILE_PATH="coverage/football_league$initialize.coverage" NAME="initialize Coverage Results" MODIFIED="1736277353021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/football_league$test_parser.coverage" NAME="test_parser Coverage Results" MODIFIED="1736277712554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/tests" />
+    <SUITE FILE_PATH="coverage/football_league$initialize.coverage" NAME="initialize Coverage Results" MODIFIED="1736356506526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

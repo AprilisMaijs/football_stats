@@ -1,5 +1,5 @@
 import os
-from database.database import init_db, SessionLocal, engine
+from database.database import SessionLocal, engine
 from database.models import Base
 from parsers.json_parser import MatchParser
 

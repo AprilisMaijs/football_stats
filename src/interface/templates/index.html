@@ -1,13 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Football League Statistics</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Statistics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --background-dark: #0f172a;
+            --card-bg: #1e293b;
+            --hover-bg: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--background-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem;
         }
 
         .container {
@@ -16,148 +36,270 @@
         }
 
         .section {
-            background-color: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+            background: var(--card-bg);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
 
         h1 {
-            color: #333;
-            margin-bottom: 30px;
+            font-size: 1.875rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--primary-color);
         }
 
-        h2 {
-            color: #666;
-            margin-bottom: 15px;
+        .table-container {
+            overflow-x: auto;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 10px;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+            font-size: 0.875rem;
         }
 
         th {
-            background-color: #f8f8f8;
-            font-weight: bold;
+            background: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--hover-bg);
+        }
+
+        tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.02);
         }
 
         tr:hover {
-            background-color: #f5f5f5;
+            background: var(--hover-bg);
+            transition: background-color 0.2s ease;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .badge-success {
+            background: #064e3b;
+            color: #a7f3d0;
+        }
+
+        .badge-danger {
+            background: #7f1d1d;
+            color: #fecaca;
+        }
+
+        .btn-primary, .btn-danger {
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-danger {
+            background: #dc2626;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+        }
+
+        .btn-danger:hover {
+            background: #b91c1c;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .section {
+                padding: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            th, td {
+                padding: 0.75rem;
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Football League Statistics</h1>
-
         <div class="section">
-            <h2>Tournament Standings</h2>
-            <table>
-                <tr>
-                    <th>Position</th>
-                    <th>Team</th>
-                    <th>Points</th>
-                    <th>W</th>
-                    <th>WO</th>
-                    <th>LO</th>
-                    <th>L</th>
-                    <th>GF</th>
-                    <th>GA</th>
-                    <th>GD</th>
-                </tr>
-                {% for team in data.standings %}
-                <tr>
-                    <td>{{ loop.index }}</td>
-                    <td>{{ team.team_name }}</td>
-                    <td>{{ team.points }}</td>
-                    <td>{{ team.wins_regular }}</td>
-                    <td>{{ team.wins_overtime }}</td>
-                    <td>{{ team.losses_overtime }}</td>
-                    <td>{{ team.losses_regular }}</td>
-                    <td>{{ team.goals_for }}</td>
-                    <td>{{ team.goals_against }}</td>
-                    <td>{{ team.goal_difference }}</td>
-                </tr>
-                {% endfor %}
-            </table>
+            <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                <button onclick="flushData()" class="btn-danger">Flush Data</button>
+                <button onclick="reloadData()" class="btn-primary">Reload Data</button>
+            </div>
+            <h1><i class="fas fa-trophy"></i> League Standings</h1>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Team</th>
+                        <th>Points</th>
+                        <th>MP</th>
+                        <th>W (Reg)</th>
+                        <th>W (OT)</th>
+                        <th>L (Reg)</th>
+                        <th>L (OT)</th>
+                        <th>GF</th>
+                        <th>GA</th>
+                        <th>GD</th>
+                    </tr>
+                    {% for team in data.standings %}
+                    <tr>
+                        <td><strong>{{ team.team_name }}</strong></td>
+                        <td class="stat-value">{{ team.points }}</td>
+                        <td>{{ team.matches_played }}</td>
+                        <td>{{ team.wins_regular }}</td>
+                        <td>{{ team.wins_overtime }}</td>
+                        <td>{{ team.losses_regular }}</td>
+                        <td>{{ team.losses_overtime }}</td>
+                        <td>{{ team.goals_for }}</td>
+                        <td>{{ team.goals_against }}</td>
+                        <td class="{{ 'stat-value' if team.goal_difference > 0 else '' }}">{{ team.goal_difference }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
         </div>
 
         <div class="section">
-            <h2>Top Scorers</h2>
-            <table>
-                <tr>
-                    <th>Position</th>
-                    <th>Player</th>
-                    <th>Team</th>
-                    <th>Goals</th>
-                    <th>Assists</th>
-                </tr>
-                {% for scorer in data.scorers %}
-                <tr>
-                    <td>{{ loop.index }}</td>
-                    <td>{{ scorer.player_name }}</td>
-                    <td>{{ scorer.team_name }}</td>
-                    <td>{{ scorer.goals }}</td>
-                    <td>{{ scorer.assists }}</td>
-                </tr>
-                {% endfor %}
-            </table>
+            <h1><i class="fas fa-futbol"></i> Top Scorers</h1>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Player</th>
+                        <th>Team</th>
+                        <th>Goals</th>
+                        <th>Assists</th>
+                    </tr>
+                    {% for scorer in data.scorers %}
+                    <tr>
+                        <td><strong>{{ scorer.player_name }}</strong></td>
+                        <td>{{ scorer.team_name }}</td>
+                        <td class="stat-value">{{ scorer.goals }}</td>
+                        <td>{{ scorer.assists }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
         </div>
 
         <div class="section">
-            <h2>Referee Statistics</h2>
-            <table>
-                <tr>
-                    <th>Position</th>
-                    <th>Referee</th>
-                    <th>Matches</th>
-                    <th>Cards</th>
-                    <th>Avg/Match</th>
-                </tr>
-                {% for ref in data.referees %}
-                <tr>
-                    <td>{{ loop.index }}</td>
-                    <td>{{ ref.referee_name }}</td>
-                    <td>{{ ref.matches }}</td>
-                    <td>{{ ref.total_cards }}</td>
-                    <td>{{ "%.2f"|format(ref.avg_cards_per_match) }}</td>
-                </tr>
-                {% endfor %}
-            </table>
+            <h1><i class="fas fa-exchange-alt"></i> Substitutions</h1>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Player</th>
+                        <th>Team</th>
+                        <th>Role</th>
+                        <th>Times Subbed Out</th>
+                    </tr>
+                    {% for sub in data.substitutions %}
+                    <tr>
+                        <td><strong>{{ sub.player_name }}</strong></td>
+                        <td>{{ sub.team_name }}</td>
+                        <td>{{ sub.role }}</td>
+                        <td>{{ sub.times_subbed_out }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
         </div>
 
         <div class="section">
-            <h2>Top Goalkeepers</h2>
-            <table>
-                <tr>
-                    <th>Position</th>
-                    <th>Goalkeeper</th>
-                    <th>Team</th>
-                    <th>Matches</th>
-                    <th>Goals Conceded</th>
-                    <th>Avg/Match</th>
-                </tr>
-                {% for keeper in data.keepers %}
-                <tr>
-                    <td>{{ loop.index }}</td>
-                    <td>{{ keeper.keeper_name }}</td>
-                    <td>{{ keeper.team_name }}</td>
-                    <td>{{ keeper.matches_played }}</td>
-                    <td>{{ keeper.goals_conceded }}</td>
-                    <td>{{ "%.1f"|format(keeper.avg_goals_conceded) }}</td>
-                </tr>
-                {% endfor %}
-            </table>
+            <h1><i class="fas fa-bullseye"></i> Goals</h1>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Scorer</th>
+                        <th>Team</th>
+                        <th>Time</th>
+                        <th>Venue</th>
+                        <th>Spectators</th>
+                        <th>Type</th>
+                    </tr>
+                    {% for goal in data.goals %}
+                    <tr>
+                        <td><strong>{{ goal.scorer_name }}</strong></td>
+                        <td>{{ goal.team_name }}</td>
+                        <td>{{ goal.time }}</td>
+                        <td>{{ goal.venue }}</td>
+                        <td>{{ goal.spectators }}</td>
+                        <td>
+                            <span class="badge {{ 'badge-success' if not goal.is_penalty else 'badge-danger' }}">
+                                {{ "Penalty" if goal.is_penalty else "Open Play" }}
+                            </span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
         </div>
     </div>
+    <script>
+        async function flushData() {
+            if (!confirm('Are you sure you want to flush all data?')) return;
+
+            try {
+                const response = await fetch('/api/flush', { method: 'POST' });
+                const data = await response.json();
+                if (data.status === 'success') {
+                    location.reload();
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            } catch (error) {
+                alert('Error: ' + error);
+            }
+        }
+
+        async function reloadData() {
+            try {
+                const response = await fetch('/api/reload', { method: 'POST' });
+                const data = await response.json();
+                if (data.status === 'success') {
+                    location.reload();
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            } catch (error) {
+                alert('Error: ' + error);
+            }
+        }
+    </script>
 </body>
 </html>
